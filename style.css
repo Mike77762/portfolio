@@ -1,4 +1,3 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -256,12 +255,23 @@ section {
     background-color: var(--light);
 }
 
+.skills-subtitle {
+    text-align: center;
+    font-size: 20px;
+    color: var(--primary);
+    margin: 0 0 25px;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto 60px;
+}
+
+.skills-grid:last-of-type {
+    margin-bottom: 0;
 }
 
 .skill-box {
@@ -287,6 +297,84 @@ section {
 .skill-box p {
     font-weight: 600;
     color: var(--dark);
+}
+
+/* ============================================
+   EXPERIENCE SECTION
+   ============================================ */
+.experience {
+    background-color: var(--light);
+}
+
+.experience-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.experience-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 25px 30px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border-left: 4px solid var(--primary);
+}
+
+.experience-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.experience-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.experience-header h3 {
+    font-size: 20px;
+    color: var(--dark);
+}
+
+.experience-date {
+    font-size: 14px;
+    color: var(--gray);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.experience-company {
+    font-size: 15px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.experience-content p:not(.experience-company) {
+    color: var(--gray);
+    line-height: 1.6;
 }
 
 /* ============================================
@@ -521,5 +609,14 @@ section {
     
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .experience-item {
+        flex-direction: column;
+    }
+
+    .experience-header {
+        flex-direction: column;
+        gap: 2px;
     }
 }
